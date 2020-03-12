@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import Error from './Error';
+import PropTypes from 'prop-types';
 import shortid from 'shortid';
+import Error from './Error';
 
 const Form = ({ storeExpense, storeAddExpense }) => {
   const [name, storeName] = useState('');
@@ -55,6 +56,11 @@ const Form = ({ storeExpense, storeAddExpense }) => {
       <input type='submit' className='button-primary u-full-width' value='Agregar gasto' />
     </form>
   );
+};
+
+Form.propTypes = {
+  storeExpense: PropTypes.func.isRequired,
+  storeAddExpense: PropTypes.func.isRequired
 };
 
 export default Form;
