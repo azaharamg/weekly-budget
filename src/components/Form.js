@@ -22,6 +22,9 @@ const Form = ({ addNewExpense }) => {
     };
 
     addNewExpense(expense);
+
+    storeName('');
+    storeAmount(0);
   };
 
   return (
