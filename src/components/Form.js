@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Error from './Error';
 import shortid from 'shortid';
 
-const Form = () => {
+const Form = ({ addNewExpense }) => {
   const [name, storeName] = useState('');
   const [amount, storeAmount] = useState(0);
   const [error, storeError] = useState(false);
@@ -20,6 +20,8 @@ const Form = () => {
       amount,
       id: shortid.generate()
     };
+
+    addNewExpense(expense);
   };
 
   return (
